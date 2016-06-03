@@ -3,6 +3,7 @@ package org.hh.seckill.dao;
 import java.util.Date;
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
 import org.hh.seckill.entity.Seckill;
 
 /**
@@ -31,7 +32,8 @@ public interface SeckillDao extends IBaseDao {
 	 *            分页 查询多少条
 	 * @return
 	 */
-	List<Seckill> queryAll(int offset,int limit);
+	List<Seckill> queryAll(@Param("offset") int offset,
+			@Param("limit") int limit);
 
 	/**
 	 * 
@@ -42,7 +44,7 @@ public interface SeckillDao extends IBaseDao {
 	 *            商品ID
 	 * @return
 	 */
-	Seckill queryById(long seckillId);
+	Seckill queryById(@Param("seckillId") long seckillId);
 
 	/**
 	 * 
@@ -55,6 +57,7 @@ public interface SeckillDao extends IBaseDao {
 	 *            秒杀时间
 	 * @return
 	 */
-	int reduceNumber(long seckillId, Date killTime);
+	int reduceNumber(@Param("seckillId") long seckillId,
+			@Param("killTime") Date killTime);
 
 }

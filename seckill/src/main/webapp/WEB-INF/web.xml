@@ -1,9 +1,24 @@
+<!-- 修改servlet版本到3.x 默认2.x不支持JSP EL表达式   可以到Tomcat示例项目的web.xml去拷贝-->
 <web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
                       http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
   version="3.1"
   metadata-complete="true">
-  <!-- 修改servlet版本到3.x 默认2.x不支持JSP EL表达式   可以到Tomcat示例项目的web.xml去拷贝-->
+  <display-name>seckill</display-name>
+  
+  <!-- DispatcherServlet -->
+  <servlet>
+  	<servlet-name>seckill-dispacher</servlet-name>
+  	<servlet-class>org.springframework.web.servlet.DispatcherSe</servlet-class>
+  	<init-param>
+  		<param-name>contextConfigLocation</param-name>
+  		<param-value>classpath:spring/spring-*.xml</param-value>
+  	</init-param>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>seckill-dispacher</servlet-name>
+  	<url-pattern>/</url-pattern>
+  </servlet-mapping>
   
   </web-app>

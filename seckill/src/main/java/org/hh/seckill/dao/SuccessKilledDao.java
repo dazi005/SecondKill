@@ -1,5 +1,6 @@
 package org.hh.seckill.dao;
 
+import org.apache.ibatis.annotations.Param;
 import org.hh.seckill.entity.SuccessKilled;
 
 /**
@@ -28,7 +29,8 @@ public interface SuccessKilledDao extends IBaseDao {
 	 *            用户手机号
 	 * @return
 	 */
-	int saveSuccessKilled(long seckillId, long userPhone);
+	int saveSuccessKilled(@Param("seckillId") long seckillId,
+			@Param("userPhone") long userPhone);
 
 	/**
 	 * 
@@ -41,5 +43,6 @@ public interface SuccessKilledDao extends IBaseDao {
 	 *            用户手机号
 	 * @return
 	 */
-	SuccessKilled queryByIDSuccessKilled(long seckillId, long userPhone);
+	SuccessKilled queryByIDSuccessKilled(@Param("seckillId") long seckillId,
+			@Param("userPhone") long userPhone);
 }
