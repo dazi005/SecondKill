@@ -38,4 +38,8 @@
 		limit #{offset},#{limit}	
 	</select>
 	
+	<select id="selectAll" resultType="Seckill">
+		select * from seckill;
+	</select>
+	
 </mapper>

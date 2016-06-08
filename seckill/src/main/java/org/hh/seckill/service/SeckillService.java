@@ -30,11 +30,13 @@ public interface SeckillService extends IBaseService {
 	 * @Description: TODO 查询秒杀列表
 	 * @MethodName getSeckillList
 	 * @Author Administrator
-	 * @param offset
+	 * @param pageNow
+	 *            当前页号
 	 * @param limit
+	 *            页大小
 	 * @return
 	 */
-	List<Seckill> getSeckillList(int offset, int limit);
+	List<Seckill> getSeckillList(int pageNow, int pageSize);
 
 	/**
 	 * 

@@ -16,7 +16,7 @@ import org.hh.seckill.entity.SuccessKilled;
  *
  * @Version 1.0.0
  */
-public interface SuccessKilledDao extends IBaseDao {
+public interface SuccessKilledDao extends IBaseDao<SuccessKilled> {
 
 	/**
 	 * 

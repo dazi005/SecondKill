@@ -1,5 +1,8 @@
 package org.hh.seckill.service.impl;
 
+import java.util.List;
+
+import org.hh.seckill.dao.SeckillDao;
 import org.hh.seckill.dto.Exposer;
 import org.hh.seckill.dto.SeckillExecution;
 import org.hh.seckill.entity.Seckill;
@@ -7,13 +10,16 @@ import org.hh.seckill.exception.RepeatSeckillException;
 import org.hh.seckill.exception.SeckillCloseException;
 import org.hh.seckill.exception.SeckillException;
 import org.hh.seckill.service.SeckillService;
-
-import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
 
 public class SeckillServiceImpl extends BaseServiceImpl implements
 		SeckillService {
 
-	public List<Seckill> getSeckillList(int offset, int limit) {
+	@Autowired
+	private SeckillDao seckillDao;
+
+	public List<Seckill> getSeckillList(int pageNow, int pageSize) {
+		seckillDao.queryAll((pageNow - 1) * pageSize, pageSize);
 		return null;
 	}
 

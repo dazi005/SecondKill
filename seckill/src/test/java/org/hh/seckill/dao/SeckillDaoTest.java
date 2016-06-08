@@ -12,7 +12,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = "classpath:spring/spring-*.xml")
+@ContextConfiguration(locations = "classpath:spring/spring-dao.xml")
 public class SeckillDaoTest {
 
 	Logger log = LoggerFactory.getLogger(this.getClass());
@@ -32,7 +32,7 @@ public class SeckillDaoTest {
 
 	@Test
 	public void testReduceNumber() {
-		log.info(String.valueOf(seckillDao.reduceNumber(1003, new Date())));
+		log.info(String.valueOf(seckillDao.reduceNumber(1002, new Date())));
 	}
 
 }

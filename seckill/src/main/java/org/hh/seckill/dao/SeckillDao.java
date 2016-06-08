@@ -19,7 +19,7 @@ import org.hh.seckill.entity.Seckill;
  *
  * @Version 1.0.0
  */
-public interface SeckillDao extends IBaseDao {
+public interface SeckillDao extends IBaseDao<Seckill> {
 	
 	/**
 	 * 
@@ -48,7 +48,7 @@ public interface SeckillDao extends IBaseDao {
 
 	/**
 	 * 
-	 * @Description: TODO 减少库存数量
+	 * @Description: TODO 减少库存数量 update number字段
 	 * @MethodName reduceNumber
 	 * @Author huangh
 	 * @param seckillId
